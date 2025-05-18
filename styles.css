@@ -1,0 +1,351 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  margin-top: 80px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #d4af37;
+}
+
+header.scrolled a {
+  color: #d4af37;
+}
+
+.hero {
+  background-image: url('img/Portada.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #d4af37;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.catalogo, .nosotros, .contacto {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.autos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.auto-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auto-card img {
+  width: 100%;
+  height: auto;
+}
+
+.auto-card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.auto-card p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.auto-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input, form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 0.8rem;
+  background-color: #d4af37;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  z-index: 1001; /* Asegurar que esté por encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+}
+  
+.modal-contenido {
+  background-color: #ffffff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+  font-family: 'Roboto Slab', serif; /* Fuente más atractiva */
+}
+
+.modal-contenido h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.modal-contenido ul {
+  list-style: none;
+  padding: 0;
+  font-family: 'Roboto Slab', serif; /* Fuente más atractiva */
+}
+
+.modal-contenido li {
+  margin-bottom: 0.8rem;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555; /* Color suave */
+}
+
+/* Estilo de la imagen del vehículo */
+.modal-contenido img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para el botón de cerrar */
+.cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.acerca-de-nosotros {
+  font-family: 'Montserrat', sans-serif; /* Fuente moderna y limpia */
+  color: #333; /* Color de texto oscuro para mayor legibilidad */
+  line-height: 1.6; /* Mejor espaciado entre líneas */
+  max-width: 900px; /* Limitar el ancho para mejor lectura */
+  margin: 40px auto; /* Centrado y margen superior e inferior */
+  padding: 20px;
+}
+
+.acerca-de-nosotros h2 {
+  font-size: 2.5em; /* Título más grande */
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.acerca-de-nosotros p {
+  font-size: 1.2em; /* Tamaño de texto cómodo para lectura */
+  margin-bottom: 20px; /* Separación entre párrafos */
+  text-align: justify; /* Justificar el texto para una alineación limpia */
+}
+
+.acerca-de-nosotros strong {
+  color: #007bff; /* Resaltar las palabras clave con un color moderno */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mensaje-exito {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px 20px;
+  border-left: 5px solid #28a745;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 1rem;
+  animation: aparecer 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.juego-scratch {
+  background-color: #f2f2f2;
+  padding: 40px 20px;
+  text-align: center; /* Centra todo el contenido */
+}
+
+.juego-scratch h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 10px;
+  text-align: center; /* Asegura que el título esté centrado */
+}
+
+.juego-scratch p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: center; /* Centra también el subtítulo */
+}
+
+.juego-scratch iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 402px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+}
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  font-size: 20px;
+  background-color: #efb810;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+#scrollTopBtn.show {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+#scrollTopBtn:hover {
+  background-color: #efb810;
+}
