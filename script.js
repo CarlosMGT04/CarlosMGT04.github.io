@@ -260,3 +260,13 @@ window.onscroll = function() {
 document.getElementById("scrollTopBtn").onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
+
+// Menú hamburguesa toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+});
