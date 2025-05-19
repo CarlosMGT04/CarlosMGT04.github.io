@@ -387,12 +387,6 @@ html {
   background-color: #444;
 }
 
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 /* ESTILOS RESPONSIVE */
 .hamburger {
   display: none;
