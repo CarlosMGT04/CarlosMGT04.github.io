@@ -261,17 +261,22 @@ document.getElementById("scrollTopBtn").onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Menú hamburguesa toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const links = navLinks.querySelectorAll('a');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+    // Toggle menú al hacer clic en hamburguesa
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
 
-// Opcional: cerrar menú al hacer clic en un enlace
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+    // Cerrar menú al hacer clic en un enlace
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
   });
-});
+</script>
