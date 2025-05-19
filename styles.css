@@ -45,9 +45,37 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
+}
 
-  /* Agregado para controlar la altura fija del navbar */
-  height: 60px;
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #444;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
 }
 
 /* Responsive navbar */
@@ -61,15 +89,10 @@ body {
     flex-direction: column;
     background-color: #111;
     width: 100%;
-
-    /* Cambiado a fixed para evitar que ocupe espacio y evitar scroll extra */
-    position: fixed;
-    top: 60px; /* coincide con la altura fija del navbar */
+    position: absolute;
+    top: 60px;
     left: 0;
-    height: calc(100% - 60px);
-    overflow-y: auto;
-    padding-top: 20px;
-    z-index: 998;
+    padding: 20px 0;
   }
 
   .nav-links.active {
@@ -77,6 +100,7 @@ body {
   }
 
   .nav-links li {
+    text-align: center;
     margin: 10px 0;
   }
 }
