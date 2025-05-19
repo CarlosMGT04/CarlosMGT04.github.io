@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* === 1. RESET Y GLOBALES === */
 * {
   margin: 0;
   padding: 0;
@@ -6,55 +6,84 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   line-height: 1.6;
   background-color: #f9f9f9;
   color: #333;
-  margin-top: 80px;
+  padding-top: 0px;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* === 2. BOTONES GENERALES === */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #d4af37;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #c19e30;
+}
+
+/* === 3. NAVBAR PRINCIPAL === */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(0, 0, 0);
+  background-color: #111;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  /* Agregado para controlar la altura fija del navbar */
+  height: 60px;
 }
 
-header h1 {
-  font-size: 1.8rem;
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+
+    /* Cambiado a fixed para evitar que ocupe espacio y evitar scroll extra */
+    position: fixed;
+    top: 60px; /* coincide con la altura fija del navbar */
+    left: 0;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    padding-top: 20px;
+    z-index: 998;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-nav a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-header.scrolled {
-  background-color: rgba(0, 0, 0, 0.9);
-  color: #d4af37;
-}
-
-header.scrolled a {
-  color: #d4af37;
-}
-
+/* === 4. SECCIÓN HERO === */
 .hero {
-  background-image: url('images/Portada.jpg');
+  background-image: url('img/Portada.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -71,17 +100,7 @@ header.scrolled a {
   border-radius: 10px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #d4af37;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
+/* === 5. SECCIONES PRINCIPALES === */
 .catalogo, .nosotros, .contacto {
   padding: 3rem 2rem;
   text-align: center;
@@ -122,6 +141,7 @@ header.scrolled a {
   border-radius: 12px;
 }
 
+/* === 6. FORMULARIO === */
 form {
   display: flex;
   flex-direction: column;
@@ -137,48 +157,34 @@ form input, form textarea {
 }
 
 form button {
-  padding: 0.8rem;
+  padding: 0.8rem 1.5rem;
   background-color: #d4af37;
-  border: none;
   color: #000;
+  text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
 }
 
-footer {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+form button:hover {
+  background-color: #c19e30;
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-/* Estilos para el modal */
+/* === 7. MODAL VEHÍCULO === */
 .modal {
-  display: none; /* Ocultar el modal por defecto */
+  display: none;
   position: fixed;
-  z-index: 1001; /* Asegurar que esté por encima de todo */
+  z-index: 1001;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  background-color: rgba(0, 0, 0, 0.8);
 }
-  
+
 .modal-contenido {
   background-color: #ffffff;
   margin: 5% auto;
@@ -188,7 +194,7 @@ footer {
   max-width: 600px;
   position: relative;
   text-align: center;
-  font-family: 'Roboto Slab', serif; /* Fuente más atractiva */
+  font-family: 'Roboto Slab', serif;
 }
 
 .modal-contenido h2 {
@@ -201,7 +207,6 @@ footer {
 .modal-contenido ul {
   list-style: none;
   padding: 0;
-  font-family: 'Roboto Slab', serif; /* Fuente más atractiva */
 }
 
 .modal-contenido li {
@@ -209,17 +214,15 @@ footer {
   text-align: left;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555; /* Color suave */
+  color: #555;
 }
 
-/* Estilo de la imagen del vehículo */
 .modal-contenido img {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
 }
 
-/* Estilo para el botón de cerrar */
 .cerrar {
   position: absolute;
   top: 1rem;
@@ -229,41 +232,38 @@ footer {
   cursor: pointer;
 }
 
-.cerrar:hover,
-.cerrar:focus {
+.cerrar:hover, .cerrar:focus {
   color: black;
   text-decoration: none;
 }
 
+/* === 8. SECCIÓN NOSOTROS === */
 .acerca-de-nosotros {
-  font-family: 'Montserrat', sans-serif; /* Fuente moderna y limpia */
-  color: #333; /* Color de texto oscuro para mayor legibilidad */
-  line-height: 1.6; /* Mejor espaciado entre líneas */
-  max-width: 900px; /* Limitar el ancho para mejor lectura */
-  margin: 40px auto; /* Centrado y margen superior e inferior */
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 40px auto;
   padding: 20px;
 }
 
 .acerca-de-nosotros h2 {
-  font-size: 2.5em; /* Título más grande */
+  font-size: 2.5em;
   color: #1a1a1a;
   margin-bottom: 20px;
 }
 
 .acerca-de-nosotros p {
-  font-size: 1.2em; /* Tamaño de texto cómodo para lectura */
-  margin-bottom: 20px; /* Separación entre párrafos */
-  text-align: justify; /* Justificar el texto para una alineación limpia */
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .acerca-de-nosotros strong {
-  color: #007bff; /* Resaltar las palabras clave con un color moderno */
+  color: #007bff;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* === 9. MENSAJE DE ÉXITO === */
 .mensaje-exito {
   background-color: #d4edda;
   color: #155724;
@@ -284,10 +284,11 @@ html {
   }
 }
 
+/* === 10. JUEGO EN SCRATCH === */
 .juego-scratch {
   background-color: #f2f2f2;
   padding: 40px 20px;
-  text-align: center; /* Centra todo el contenido */
+  text-align: center;
 }
 
 .juego-scratch h2 {
@@ -295,7 +296,6 @@ html {
   font-size: 2.5rem;
   color: #111;
   margin-bottom: 10px;
-  text-align: center; /* Asegura que el título esté centrado */
 }
 
 .juego-scratch p {
@@ -303,7 +303,6 @@ html {
   font-size: 1.1rem;
   color: #444;
   margin-bottom: 20px;
-  text-align: center; /* Centra también el subtítulo */
 }
 
 .juego-scratch iframe {
@@ -320,6 +319,7 @@ html {
   justify-content: center;
 }
 
+/* === 11. BOTÓN SCROLL TO TOP === */
 #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -350,83 +350,11 @@ html {
   background-color: #efb810;
 }
 
-/* NAVBAR ESTILO GENERAL */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #111;
-  padding: 10px 20px;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.navbar .logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.navbar .nav-links {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-}
-
-.navbar .nav-links li a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.navbar .nav-links li a:hover {
-  background-color: #444;
-}
-
-/* ESTILOS RESPONSIVE */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: #111;
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-}
-
-/* Eliminar márgenes y paddings por defecto */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+/* === 12. FOOTER === */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
 }
