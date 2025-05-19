@@ -2,7 +2,7 @@
 
 **Luxury BGA** es una plataforma web dedicada a la exhibición de vehículos de lujo, destacando las especificaciones técnicas de autos y motos de alto rendimiento. El sitio está diseñado para ofrecer una experiencia visual moderna, informativa e intuitiva.
 
-![Vista previa del sitio](./d55ea93d-9881-4bf9-b2be-ce63b674a615.png)
+![Vista previa del sitio](preview.png)
 
 ---
 
