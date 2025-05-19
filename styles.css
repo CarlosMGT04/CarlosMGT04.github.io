@@ -54,7 +54,7 @@ header.scrolled a {
 }
 
 .hero {
-  background-image: url('img/Portada.jpg');
+  background-image: url('image/Portada.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
