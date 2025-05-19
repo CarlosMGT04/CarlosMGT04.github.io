@@ -394,6 +394,13 @@ html {
 }
 
 /* ESTILOS RESPONSIVE */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -401,19 +408,20 @@ html {
 
   .nav-links {
     display: none;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
     position: absolute;
     top: 60px;
     left: 0;
-    width: 100%;
-    background-color: #111;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 15px 0;
   }
 
   .nav-links.active {
     display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
   }
 }
 
