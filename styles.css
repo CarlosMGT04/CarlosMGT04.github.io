@@ -107,7 +107,7 @@ body {
 
 /* === 4. SECCIÓN HERO === */
 .hero {
-  background-image: url('img/Portada.jpg');
+  background-image: url('images/Portada.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
