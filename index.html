@@ -34,6 +34,29 @@
     </div>
   </section>
 
+<!-- SECCIÓN DE VIDEO DE PRESENTACIÓN -->
+<section class="presentacion" id="presentacion">
+  <h2>Video de Presentación</h2>
+  <p>Conoce más sobre Luxury BGA en este breve video.</p>
+
+  <!-- Miniatura que abre el video -->
+  <div class="video-thumbnail" onclick="abrirVideo()">
+    <img src="images/miniatura_video.jpg" alt="Miniatura del video">
+    <div class="play-icon">&#9658;</div>
+  </div>
+</section>
+
+<!-- MODAL DEL VIDEO (oculto por defecto) -->
+<div id="modalVideo" class="modal">
+  <div class="modal-contenido fade-in">
+    <span class="cerrar" onclick="cerrarVideo()">&times;</span>
+    <video id="videoPresentacion" controls>
+      <source src="videos/Presentacion.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+</div>
+
   <section id="catalogo" class="catalogo">      
     <h2>Catálogo de vehículos</h2>
     <div class="autos-grid">
@@ -48,7 +71,7 @@
         <h3>Kawasaki Ninja H2R</h3>
         <p>$235.000.000 COP</p>
       </div>
-      <div class="auto-card">
+      <div class="auto-card"> 
         <img src="images/Mercedes.jpg" loading="lazy" alt="Mercedes-Benz AMG GT" />
         <h3>Mercedes-Benz AMG GT</h3>
         <p>$810.000.000 COP</p>
@@ -60,7 +83,7 @@
       </div>
       <div class="auto-card">
         <img src="images/M1000RR.jpg" loading="lazy" alt="BMW M1000RR" />
-        <h3>BMW M1000RR</h3>
+        <h3>BMW M1000RR</h3>  
         <p>$205.000.000 COP</p>
       </div>
       <div class="auto-card">
@@ -157,7 +180,33 @@
   <script src="script.js"></script>
 </body>
 
-  <script>
+<!-- Cerrar video con tecla escape -->
+<script>
+  const modal = document.getElementById("modalVideo");
+  const video = document.getElementById("videoPresentacion");
+
+  function abrirVideo() {
+    modal.style.display = "block";
+    video.play();
+    document.addEventListener("keydown", cerrarConEscape);
+  }
+
+  function cerrarVideo() {
+    modal.style.display = "none";
+    video.pause();
+    video.currentTime = 0;
+    document.removeEventListener("keydown", cerrarConEscape);
+  }
+
+  function cerrarConEscape(e) {
+    if (e.key === "Escape") {
+      cerrarVideo();
+    }
+  }
+</script>
+
+<!-- Menú de hamburguesa -->
+<script>
   document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -175,6 +224,7 @@
   });
 </script>
 
+<!-- Formulario -->
 <script>
   // Manejar envío de formulario
   document.addEventListener("DOMContentLoaded", function () {
@@ -193,7 +243,7 @@
           form.reset(); // Limpiar formulario
         }, 2000);
       });
-    }
+    } 
   });
 </script>
 
@@ -205,5 +255,4 @@
 <div id="loader" class="loader-overlay">
   <div class="spinner"></div>
 </div>
-
 </html>
