@@ -29,9 +29,7 @@ botonVolverArriba.addEventListener("click", function() {
   });
 });
 
-// ===========================
 // Manejo del formulario de contacto
-// ===========================
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -63,7 +61,6 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 
 // Limpiar el formulario
 this.reset();
-
 });
 
 // ===========================
@@ -261,22 +258,54 @@ document.getElementById("scrollTopBtn").onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const links = navLinks.querySelectorAll('a');
+// Menú hamburguesa toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-    // Toggle menú al hacer clic en hamburguesa
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
 
-    // Cerrar menú al hacer clic en un enlace
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
+// Opcional: cerrar menú al hacer clic en un enlace
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
   });
-</script>
+});
+
+// Abrir el modal y reproducir el video
+function abrirVideo() {
+  const modal = document.getElementById('modalVideo');
+  const video = document.getElementById('videoPresentacion');
+
+  modal.style.display = 'block';
+  video.currentTime = 0;
+  video.play();
+}
+
+// Cerrar el modal y detener el video
+function cerrarVideo() {
+  const modal = document.getElementById('modalVideo');
+  const video = document.getElementById('videoPresentacion');
+
+  video.pause();
+  video.currentTime = 0;
+  modal.style.display = 'none';
+}
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    cerrarVideo();
+  }
+});
+
+// Cerrar haciendo clic fuera del modal
+window.addEventListener('click', function (e) {
+  const modal = document.getElementById('modalVideo');
+  const contenido = document.querySelector('.modal-contenido');
+
+  if (e.target === modal) {
+    cerrarVideo();
+  }
+});
