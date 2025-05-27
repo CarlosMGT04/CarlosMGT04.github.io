@@ -107,7 +107,7 @@ body {
 
 /* === 4. SECCIÓN HERO === */
 .hero {
-  background-image: url('images/Portada.jpg');
+  background-image: url('img/Portada.jpg');
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -381,4 +381,110 @@ footer {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
+}
+/* === 13. VIDEO === */
+/* === SECCIÓN VIDEO PRESENTACIÓN === */
+.presentacion {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f4f4f4;
+}
+
+.presentacion h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.presentacion p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* === MINIATURA DEL VIDEO === */
+.video-thumbnail {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  display: block;
+}
+
+.video-thumbnail .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 12px 16px;
+}
+
+.video-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* === MODAL DEL VIDEO === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Animación de entrada */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 1rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 360px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: black;
 }
