@@ -68,7 +68,7 @@ this.reset();
 // ===========================
 const especificacionesVehiculos = {
   "Lamborghini Huracán": {
-    imagen: "img/Lamborghinii.jpg",
+    imagen: "images/Lamborghinii.jpg",
     especificaciones: [
       "Motor V10 de 5.2 L",
       "Potencia: 640 CV",
@@ -78,7 +78,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Kawasaki Ninja H2R": {
-    imagen: "img/H2R.jpg",
+    imagen: "images/H2R.jpg",
     especificaciones: [
       "Motor de 998 cc sobrealimentado",
       "Potencia: 310 CV",
@@ -88,7 +88,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Mercedes-Benz AMG GT": {
-    imagen: "img/Mercedes.jpg",
+    imagen: "images/Mercedes.jpg",
     especificaciones: [
       "Motor V8 biturbo de 4.0 L",
       "Potencia: 530 CV",
@@ -98,7 +98,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Ferrari 488 GTB": {
-    imagen: "img/Ferrari.jpg",
+    imagen: "images/Ferrari.jpg",
     especificaciones: [
       "Motor V8 biturbo de 3.9 L",
       "Potencia: 670 CV",
@@ -108,7 +108,7 @@ const especificacionesVehiculos = {
     ]
   },
   "BMW M1000RR": {
-    imagen: "img/M1000RR.jpg",
+    imagen: "images/M1000RR.jpg",
     especificaciones: [
       "Motor de 999 cc",
       "Potencia: 212 CV",
@@ -118,7 +118,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Porsche 911 Turbo S": {
-    imagen: "img/911TurboS.jpg",
+    imagen: "images/911TurboS.jpg",
     especificaciones: [
       "Motor bóxer de 6 cilindros y 3.8 L",
       "Potencia: 650 CV",
@@ -128,7 +128,7 @@ const especificacionesVehiculos = {
     ]
   },
   "McLaren 720S": {
-    imagen: "img/720S.jpg",
+    imagen: "images/720S.jpg",
     especificaciones: [
       "Motor V8 biturbo de 4.0 L",
       "Potencia: 720 CV",
@@ -138,7 +138,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Mercedes AMG Clase G63 Brabus": {
-    imagen: "img/Brabus.jpg",
+    imagen: "images/Brabus.jpg",
     especificaciones: [
       "Motor V8 biturbo de 4.0 L",
       "Potencia: 800 CV",
@@ -148,7 +148,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Bugatti Divo": {
-    imagen: "img/BugattiDivo.jpg",
+    imagen: "images/BugattiDivo.jpg",
     especificaciones: [
       "Motor W16 de 8.0 L",
       "Potencia: 1.500 CV",
@@ -158,7 +158,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Koenigsegg Regera": {
-    imagen: "img/KoenigseggRegera.jpg",
+    imagen: "images/KoenigseggRegera.jpg",
     especificaciones: [
       "Motor V8 biturbo de 5.0 L + 3 motores eléctricos",
       "Potencia combinada: 1.500 CV",
@@ -168,7 +168,7 @@ const especificacionesVehiculos = {
     ]
   },
   "BMW S1000RR": {
-    imagen: "img/S1000RR.jpg",
+    imagen: "images/S1000RR.jpg",
     especificaciones: [
       "Motor de 999 cc",
       "Potencia: 210 CV",
@@ -178,7 +178,7 @@ const especificacionesVehiculos = {
     ]
   },
   "Ducati Superleggera V4": {
-    imagen: "img/Ducatti.jpg",
+    imagen: "images/Ducatti.jpg",
     especificaciones: [
       "Motor V4 de 998 cc",
       "Potencia: 234 CV",
